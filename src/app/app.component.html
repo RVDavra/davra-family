@@ -1,5 +1,6 @@
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">{{title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,7 +14,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
-        </li>    
+        </li>
       </ul>
-    </div>  
+    </div>
   </nav>
+  <div *ngIf="nameArray" class="d-flex flex-wrap">
+    <app-list-item [name]="name" *ngFor="let name of nameArray"></app-list-item>
+  </div>
+</div>
