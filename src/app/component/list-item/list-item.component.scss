@@ -1,3 +1,11 @@
 .list-item {
     margin: 10px;
 }
+.title {
+    height: 33px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.contact {
+    height: 31px;
+}

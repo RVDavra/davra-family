@@ -1,7 +1,10 @@
 <div class="card list-item">
   <div class="card-body">
-    <h4 class="card-title">{{name}}</h4>
-    <p class="card-text">{{ getContact() }}</p>
+    <h4 class="card-title title">{{name}}</h4>
+    <p class="card-text contact">Contact No: 
+      <a [href]="getOpenLink()" class="btn btn-sm btn-light" *ngIf="personalInfo.contact">{{getContact()}}</a>
+      <span *ngIf="!personalInfo.contact">{{ getContact() }}</span>
+    </p>
     <a href="#" class="btn btn-primary">See Profile</a>
   </div>
 </div>

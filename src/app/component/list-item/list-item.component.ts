@@ -12,13 +12,29 @@ export class ListItemComponent implements OnInit {
   @Input('name') name;
 
   personalInfo: Person;
-  constructor(private databaseService: DatabaseService) { }
+  constructor(private databaseService: DatabaseService) {}
 
   ngOnInit() {
     this.personalInfo = this.databaseService.getDataOfPerson(this.name);
   }
 
   getContact() {
-    return this.personalInfo.contact? this.personalInfo.contact: "no contact info available";
+    return this.personalInfo.contact? this.personalInfo.contact: "Not Available";
+  }
+
+  getOpenLink() {
+    if(this.personalInfo.contact != undefined) {
+      return 'tel:'+this.personalInfo.contact;
+    } else {
+      return '';
+    }
+  }
+
+  openCall() {
+    if(this.personalInfo.contact != undefined) {
+      return 'tel:'+this.personalInfo.contact;
+    } else {
+      return '';
+    }
   }
 }

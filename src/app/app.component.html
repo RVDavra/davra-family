@@ -1,24 +1,26 @@
-<div class="container-fluid">
+<div>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">{{title}}</a>
+    <a class="navbar-brand" href="">{{title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link btn btn-dark">Add Member</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link btn btn-dark">Update Member</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link btn btn-dark" href="">Login</a>
         </li>
       </ul>
     </div>
   </nav>
-  <div *ngIf="nameArray" class="d-flex flex-wrap">
-    <app-list-item [name]="name" *ngFor="let name of nameArray"></app-list-item>
+  <div class="container">
+    <div *ngIf="nameArray" class="d-flex flex-wrap justify-content-center">
+      <app-list-item [name]="name" class="flex-fill" *ngFor="let name of nameArray"></app-list-item>
+    </div>
   </div>
 </div>
