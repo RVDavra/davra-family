@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../services/database.service';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,22 @@ import { DatabaseService } from '../../services/database.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private databaseService: DatabaseService) { }
+  constructor(private db: AngularFireDatabase, private databaseService: DatabaseService) {
+    if (!databaseService.data) {
+      db.object('/').valueChanges().subscribe(this.handleData.bind(this));
+    }
+  }
 
   nameArray: string[] = [];
 
   ngOnInit() {
-    if(this.databaseService.isDataAvailable()) {
+    if (this.databaseService.isDataAvailable()) {
       this.nameArray = this.databaseService.getNameArray();
     }
+  }
+
+  handleData(data) {
+    this.databaseService.setData(data);
   }
 
 }

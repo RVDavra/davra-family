@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthguardService } from '../../services/authguard.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,11 @@ export class HeaderComponent implements OnInit {
 
   @Input('title') title;
 
-  constructor(private router: Router) { }
+  isLoggedIn = false;
+
+  constructor(private router: Router,private authguard: AuthguardService) { 
+    this.isLoggedIn = authguard.isloggedIn;
+  }
 
   ngOnInit() {
   }
