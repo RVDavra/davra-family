@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DatabaseService } from '../../services/database.service';
 import { Person } from '../../model/person';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-item',
@@ -12,7 +13,7 @@ export class ListItemComponent implements OnInit {
   @Input('name') name;
 
   personalInfo: Person;
-  constructor(private databaseService: DatabaseService) {}
+  constructor(private databaseService: DatabaseService,private router: Router) {}
 
   ngOnInit() {
     this.personalInfo = this.databaseService.getDataOfPerson(this.name);
@@ -36,5 +37,9 @@ export class ListItemComponent implements OnInit {
     } else {
       return '';
     }
+  }
+
+  navigateToDetail() {
+    this.router.navigateByUrl("/detail/"+this.name);
   }
 }

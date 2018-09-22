@@ -5,6 +5,7 @@
       <a [href]="getOpenLink()" class="btn btn-sm btn-light" *ngIf="personalInfo.contact">{{getContact()}}</a>
       <span *ngIf="!personalInfo.contact">{{ getContact() }}</span>
     </p>
-    <a href="#" class="btn btn-primary">See Profile</a>
+    <!-- <a [href]="'/detail/'+name" class="btn btn-primary">See Profile</a> -->
+    <button class="btn btn-primary" (click)="navigateToDetail()">See Profile</button>
   </div>
 </div>
