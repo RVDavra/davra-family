@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="form-gruop search-container">
+    <label for="search text">Type Here to Search:</label>
+    <input #searchBox type="text" class="form-control" id="usr" (keyup)="search(searchBox.value)">
+  </div>
+  <div class="container">
+      <div *ngIf="nameArray" class="d-flex flex-wrap justify-content-center">
+        <app-list-item [name]="name" class="flex-fill" *ngFor="let name of searchData"></app-list-item>
+      </div>
+    </div>
+</div>
