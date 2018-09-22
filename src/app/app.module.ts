@@ -16,6 +16,7 @@ import { DetailComponent } from './component/detail/detail.component';
 import { LoginComponent } from './component/login/login.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { DatabaseService } from './services/database.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { FooterComponent } from './component/footer/footer.component';
     AngularFireAuthModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ DatabaseService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
