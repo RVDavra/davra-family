@@ -7,17 +7,21 @@ import { AngularFireAuthModule } from '@angular/fire/auth'
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ListItemComponent } from './component/list-item/list-item.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './component/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListItemComponent
+    ListItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

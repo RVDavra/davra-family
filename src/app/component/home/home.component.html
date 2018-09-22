@@ -1,0 +1,5 @@
+<div class="container">
+  <div *ngIf="nameArray" class="d-flex flex-wrap justify-content-center">
+    <app-list-item [name]="name" class="flex-fill" *ngFor="let name of nameArray"></app-list-item>
+  </div>
+</div>
