@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { DatabaseService } from './services/database.service';
 import { AuthguardService } from './services/authguard.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { AuthguardService } from './services/authguard.service';
 export class AppComponent {
   title = 'Davra Family';
   constructor(private db: AngularFireDatabase,
-    private databaseService: DatabaseService,
+    private fireAuth: AngularFireAuth,
+    private databaseService: DatabaseService, 
     private authguard: AuthguardService) {
     authguard.checkLogin();
     if (authguard.isloggedIn) {

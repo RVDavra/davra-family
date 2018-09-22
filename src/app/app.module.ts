@@ -17,6 +17,7 @@ import { LoginComponent } from './component/login/login.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { DatabaseService } from './services/database.service';
+import { ModalComponent } from './component/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DatabaseService } from './services/database.service';
     DetailComponent,
     LoginComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

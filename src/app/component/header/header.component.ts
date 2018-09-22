@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn = false;
 
   constructor(private router: Router,private authguard: AuthguardService) { 
-    this.isLoggedIn = authguard.isloggedIn;
+    this.isLoggedIn = this.authguard.isloggedIn;
   }
 
   ngOnInit() {
@@ -24,4 +24,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl(url);
   }
 
+  logout() {
+    this.authguard.logout();
+  }
 }
