@@ -1,3 +1,111 @@
-<p>
-  detail works!
-</p>
+<div class="container jumbotron">
+
+    <h4 class="text-center">{{name}}</h4>
+
+    <div class="card detail-card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col text-center font-weight-bold label no-wrap">Father Name</div>
+                <h5 class="col btn btn-light font-weight-bold" (click)="navigateToDetail(personalInfo.father)">{{personalInfo.father}}</h5>
+            </div>
+        </div>
+        <div class="card-body" *ngIf="personalInfo.mother">
+            <div class="row">
+                <div class="col text-center font-weight-bold label">Mother Name</div>
+                <h5 class="col btn btn-light font-weight-bold" (click)="navigateToDetail(personalInfo.mother)">{{personalInfo.mother}}</h5>
+            </div>
+        </div>
+        <div class="card-body" *ngIf="personalInfo.wife">
+            <div class="row">
+                <div class="col text-center font-weight-bold label">Contact</div>
+                <h5 class="col btn btn-light font-weight-bold" (click)="navigateToDetail(personalInfo.wife)">{{personalInfo.wife}}</h5>
+            </div>
+        </div>
+        <div class="card-body" *ngIf="personalInfo.contact">
+            <div class="row">
+                <div class="col text-center font-weight-bold label">Contact</div>
+                <a class="col btn btn-light font-weight-bold" [href]="'tel:'+personalInfo.contact">{{personalInfo.contact}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="personalInfo.brother">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of personalInfo.brother">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Brothers</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="personalInfo.sister">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of personalInfo.sister">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Sisters</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="personalInfo.son">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of personalInfo.son">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Sons</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="personalInfo.daughter">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of personalInfo.daughter">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Daughters</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="fatherInfo && fatherInfo.brother">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of fatherInfo.brother">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Uncles</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="fatherInfo && fatherInfo.sister">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of fatherInfo.sister">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Aunts</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="motherInfo && motherInfo.brother">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of motherInfo.brother">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Maternal Uncles</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card detail-card" *ngIf="motherInfo && motherInfo.sister">
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let b of motherInfo.sister">
+                    <h5 *ngIf="!b" class="text-center text-center font-weight-bold">Maternal Aunts</h5>
+                    <h5 *ngIf="b" class="col text-center btn btn-light font-weight-bold" (click)="navigateToDetail(b)">{{b}}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
