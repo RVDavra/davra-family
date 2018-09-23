@@ -55,4 +55,8 @@ export class DetailComponent implements OnInit, DoCheck {
   goBack() {
     this.location.back();  
   }
+
+  goToUpdate() {
+    this.router.navigateByUrl("/update/" + this.name);
+  }
 }

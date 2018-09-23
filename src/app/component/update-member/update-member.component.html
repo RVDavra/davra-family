@@ -1,3 +1,93 @@
-<p>
-  update-member works!
-</p>
+<app-modal [title]="'Success'" [message]="'Data Added Successfully'" [disable]="!showPopup"
+  (closePopup)="closePopup()"></app-modal>
+<div class="container">
+  <form class="form-container" name="form">
+    <div class="card bg-dark text-white" *ngIf="!isValid">
+      <div class="card-body">To Submit data must add name and Father name</div>
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Name</div>
+      </div>
+      <input #name type="text" class="form-control" name="name" (input)="isValidData()" [value]="personName" required>
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Father</div>
+      </div>
+      <input #father type="text" class="form-control" name="father" (input)="isValidData()" [value]="personalInfo.father" required>
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Mother</div>
+      </div>
+      <input #mother type="text" class="form-control" name="mother" [value]="personalInfo.mother? personalInfo.mother: ''">
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Husband</div>
+      </div>
+      <input #husband type="text" class="form-control" name="husband" [value]="personalInfo.husband? personalInfo.husband: ''">
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Wife</div>
+      </div>
+      <input #wife type="text" class="form-control" name="wife" [value]="personalInfo.wife? personalInfo.wife: ''">
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Contact</div>
+      </div>
+      <input #contact type="number" class="form-control" name="contact" [value]="personalInfo.contact? personalInfo.contact: ''">
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #sisterTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(sisterTable,'Sister')">Add Sister</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #brotherTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(brotherTable,'Brother')">Add Brother</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #sonTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(sonTable,'Son')">Add Son</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #daughterTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(daughterTable,'Daughter')">Add Daughter</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="button-container">
+      <button type="button" class="btn btn-dark" [disabled]="!isValid" (click)="submitData('form')">Submit</button>
+      <button type="button" class="btn btn-danger" (click)="goBack()">Back</button>
+    </div>
+  </form>
+</div>

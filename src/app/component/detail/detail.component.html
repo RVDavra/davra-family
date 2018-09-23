@@ -1,5 +1,4 @@
 <div class="container jumbotron">
-    <button class="btn btn-danger" (click)="goBack()">Back</button>
 
     <h4 class="text-center">{{name}}</h4>
 
@@ -114,5 +113,11 @@
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div class="row button-container">
+        <button class="col btn btn-primary" (click)="goToUpdate()">Update</button>
+        <div class="col"></div>
+        <button class="col btn btn-light" (click)="goBack()">Back</button>
     </div>
 </div>

@@ -1,9 +1,11 @@
 export class Person {
-    father;
-    mother;
-    brother;
-    sister;
-    son;
-    daughter;
-    contact;
+    father?;
+    mother?;
+    husband?;
+    wife?;
+    brother?;
+    sister?;
+    son?;
+    daughter?;
+    contact?;
 }

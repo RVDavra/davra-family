@@ -9,9 +9,6 @@
         <button class="nav-link btn btn-dark" (click)="navigateToDetail('/add')">Add</button>
       </li>
       <li class="nav-item" *ngIf="authguard.isloggedIn">
-        <button class="nav-link btn btn-dark" (click)="navigateToDetail('/update')">Update</button>
-      </li>
-      <li class="nav-item" *ngIf="authguard.isloggedIn">
         <button class="nav-link btn btn-dark" (click)="navigateToDetail('/search')">Search</button>
       </li>
       <li class="nav-item">

@@ -19,7 +19,9 @@ export class DatabaseService {
   setData(data) {
     this.data = data;
     for(const key in data) {
-      this.nameArray.push(key);
+      if(!this.nameArray.includes(key)) {
+        this.nameArray.push(key);
+      }
     }
   }
 

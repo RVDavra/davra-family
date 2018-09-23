@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   isLoggedIn = false;
 
-  constructor(private router: Router,private authguard: AuthguardService) { 
+  constructor(private router: Router,public authguard: AuthguardService) { 
     this.isLoggedIn = this.authguard.isloggedIn;
   }
 

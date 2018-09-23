@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: '',  redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'add', component: AddMemberComponent },
-  { path: 'update', component: UpdateMemberComponent },
+  { path: 'update/:name', component: UpdateMemberComponent },
   { path: 'search', component: SearchMemberComponent },
   { path: 'detail/:name', component: DetailComponent },
   { path: 'login', component: LoginComponent }
