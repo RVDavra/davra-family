@@ -21,5 +21,7 @@ export class SearchMemberComponent implements OnInit {
     this.searchData = this.nameArray.filter((value,index,array) => {
       return value.toLowerCase().includes(query.toLowerCase());
     });
+    console.log(this.searchData);
+    console.log(this.databaseService.getNameArray());
   }
 }

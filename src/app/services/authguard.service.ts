@@ -12,7 +12,6 @@ export class AuthguardService {
   constructor(private router: Router, private fireAuth: AngularFireAuth) { }
 
   checkLogin() {
-    console.log(window.localStorage.getItem('logdata'));
     if (window.localStorage.getItem('logdata')) {
       this.isloggedIn = true;
       this.router.navigateByUrl("/home");

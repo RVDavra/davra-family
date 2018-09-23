@@ -17,7 +17,7 @@ export class AppComponent {
     private authguard: AuthguardService) {
     authguard.checkLogin();
     if (authguard.isloggedIn) {
-      db.object('/').valueChanges().subscribe(this.handleData.bind(this));
+      // db.object('/').valueChanges().subscribe(this.handleData.bind(this));
     }
   }
 

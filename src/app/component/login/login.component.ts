@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(email, password) {
-    console.log(email,password);
     let promise = this.authGuard.signInWithEmailPassWord(email,password);
     promise.then(this.loginSuccessful.bind(this))
     .catch(this.showPopUp.bind(this));
