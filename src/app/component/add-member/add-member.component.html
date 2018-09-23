@@ -1,3 +1,89 @@
-<p>
-  add-member works!
-</p>
+<div class="container">
+  <form class="form-container">
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Name</div>
+      </div>
+      <input #name type="text" class="form-control" (input)="isValidData()">
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Father</div>
+      </div>
+      <input #father type="text" class="form-control">
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Mother</div>
+      </div>
+      <input #mother type="text" class="form-control">
+    </div>
+
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Husband</div>
+      </div>
+      <input #husband type="text" class="form-control">
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Wife</div>
+      </div>
+      <input #wife type="text" class="form-control">
+    </div>
+    <div class="input-group input-container">
+      <div class="input-group-prepend label-container">
+        <div class="input-group-text label">Contact</div>
+      </div>
+      <input #contact type="number" class="form-control">
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #sisterTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(sisterTable,'Sister')">Add Sister</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #brotherTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(brotherTable,'Brother')">Add Brother</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #sonTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(sonTable,'Son')">Add Son</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-container">
+      <table class="table table-sm table-borderless">
+        <tbody #daughterTable>
+          <tr>
+            <td>
+              <button type="button" class="btn btn-primary" (click)="addRow(daughterTable,'Daughter')">Add Daughter</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
+  <div class="button-container">
+    <button type="button" class="btn btn-dark" [disabled]="!isValid" (click)="submitData()">Submit</button>
+    <button type="button" class="btn btn-danger" (click)="goBack()">Back</button>
+  </div>
+</div>
